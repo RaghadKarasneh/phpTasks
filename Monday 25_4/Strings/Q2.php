@@ -1,5 +1,7 @@
 <?php
 //Write a PHP script splitting the following numeric string to be a date format
-$date = date_create_from_format('dmy','085119');
-echo date_format($date,'m:d:y');
+$date = '085119';
+echo 'The original date is: ' .$date;
+echo '<br><br>';
+echo 'The new date is: '.substr(chunk_split($date,2,':'),0,-1);
 ?>
