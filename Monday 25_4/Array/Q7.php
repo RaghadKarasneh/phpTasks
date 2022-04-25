@@ -13,12 +13,12 @@ $hightTemp=$sum/$length; //To find the Avarege temperature
 echo 'Average Temperature is: '. $hightTemp. '<br><br>';
 
 sort($array);
-echo 'List of seven lowest temperatures: ';
-for ($i=0;$i<7;$i++)
+echo 'List of five lowest temperatures: ';
+for ($i=0;$i<5;$i++)
 echo $array[$i]. ' ';
 echo '<br><br>';
 
-echo 'List of seven highest temperatures: ';
-for ($i=($length-7);$i<$length;$i++)
+echo 'List of five highest temperatures: ';
+for ($i=($length-5);$i<$length;$i++)
 echo $array[$i]. ' ';
 ?>

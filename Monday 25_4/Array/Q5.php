@@ -9,7 +9,7 @@ foreach($array as $element)
 echo '<br><br>';
 $newItem='$';
 
-array_splice($array,3,0,$newItem);
+array_splice($array,3,0,$newItem); // array_splice => to remove selected elements from an array and replaces it with new elements
 
 echo 'The new array elements are: '. "\n";
 foreach($array as $element)
