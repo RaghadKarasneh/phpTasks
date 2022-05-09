@@ -1,3 +1,6 @@
+
+<!-- ************** NOT COMPLETED ************** -->
+
 <h2>How Are You Traveling?</h2>
  
 <?php
