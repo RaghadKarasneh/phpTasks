@@ -43,25 +43,37 @@
     header("Content-Type:application/json");
     include('Configration/connection.php');
     
-        $query = "SELECT * FROM `employees`";
-        $result = mysqli_query($conn,$query);
-       while ($row = mysqli_fetch_array($result,MYSQLI_ASSOC)) //MYSQLI_ASSOC: placing the data from the database into an associative array. 
-    {
-        $emplyeeData['emp_id'] = $row['emp_id'];
-        $emplyeeData['emp_name'] = $row['emp_name'];
-        $emplyeeData['emp_img'] = $row['emp_img'];
-        $emplyeeData['emp_email'] = $row['emp_email'];
-        $emplyeeData['emp_email'] = $row['emp_address'];
-        $emplyeeData['emp_email'] = $row['emp_department'];
-        $emplyeeData['emp_salary'] = $row['emp_salary'];
-    
-        $response["status"] = "true";
-        $response["message"] = "emplyeeData";
-        $response["employees"] = $emplyeeData;
-    }
-    
-    echo json_encode($response); //convert PHP array or object into JSON representation.
-  
+    $query = "SELECT * FROM employees";
+    $result = mysqli_query($conn,$query);
+
+   while($row = mysqli_fetch_array($result,MYSQLI_ASSOC)) 
+   {
+
+
+$emplyeeData[] = array (
+
+'emp_id' => $row['emp_id'],
+    'emp_name' => $row['emp_name'],
+    'emp_email' => $row['emp_email'],
+    'emp_img' => $row['emp_img'],
+    'emp_salary' => $row['emp_salary'],
+    'emp_address' => $row['emp_address'],
+    'emp_department' => $row['emp_department'],
+
+
+
+);
+
+
+    $response["status"] = "true";
+    $response["message"] = "emplyeeData";
+    $response["employees"] = $emplyeeData;
+
+
+}
+
+echo json_encode($response); exit;
+?>
 
 
 
